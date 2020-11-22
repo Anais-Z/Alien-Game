@@ -54,57 +54,21 @@
           var newCoors = image.style.up + y ;
           //8. Use the JS built-in function Math.random() to add a random number to increment the movement of the image following the mouse.
           // Ex. + (Math.random()*200 + 100))
+          //Refer to https://www.w3schools.com/jsref/jsref_random.asp 
           newCoordinates += Math.random()*200 + "px";
           newCoors += Math.random()*200 + "px";
 
           //9. Concatenate the pixel unit to your calculation. Ex. + 'px';
       }
 
-   
-    
-    //Refer to https://www.w3schools.com/jsref/jsref_random.asp 
-    
-    //9. Concatenate the pixel unit to your calculation. Ex. + 'px';
       
   
     //Move the alien away from the cursor when the cursor is moved close to the alien image.
     //10. Get the image element & store it in a variable 
-    //var alien = document.getElementById('alien');
+      var alien = document.getElementById("alien")
 
     //11. Get browser's current width & height to set a horizontal limit for the alien image & store in variables.
-    //var height = window.innerHeight;
-    //var width = window.innerWidth;
-    //var winHeight = window.innerHeight  || document.body.clientHeight;
-    //var winWidth = window.innerWidth || document.body.clientWidth;
-    //for(i=0;1<Amount;i++)
-      //{
-        //var ypos=Math.round(Math.random()*winHeight) + 'px';
-        //var xpos =Math.round(Math.random()*winWidth) + 'px';
-      //}
-      /*function myAlien( e ){
-          winHeight = e.ClientX;
-          winWidth = e.ClientY;
-          var newX = e.clientX - 50;
-          var newY = e.clientY - 50;
-          var alien = document.getElementById("alien");
-          
-          alien.style.left = Math.random()*newX + 'px';
-          alien.style.top = Math.random()*newY + 'px';
-      }
-        //12. Attach an event handler to the alien image for the mouseover event
-      window.addEventListener("mouseover", function(e){   
-        // highlight the mouseover target
-        //event.target.style.left = event.clientX - 50 + 'px';
-        //event.target.style.top = event.clientY - 50 + 'px';
-        //alien.style.left = Math.round(Math.random()*winWidth) + 'px';
-        //alien.style.top = ypos;
-        myAlien(event);
-      });
-      // reset the color after a short delay
-      //setTimeout(function() {
-      //event.target.style.color = "";
-      //}, 500);
-      //}, false);
+     //12. Attach an event handler to the alien image for the mouseover event
       //13. Use the target property of the event object to change the coordinates. Ex. event.target.style.left = your coordinates calculation (again refer to steps 8 & 9)
       //14. Your coordinates calculation requires the variables created in step 11.*/
     </script>
