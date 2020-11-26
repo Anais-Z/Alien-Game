@@ -60,18 +60,16 @@
 
           //9. Concatenate the pixel unit to your calculation. Ex. + 'px';
       }
-     window.innerWidth = document.body.clientWidth ;
-     window.innerHeight = document.body.clientHeight;
+     
     function moveAlien(e){
     //Move the alien away from the cursor when the cursor is moved close to the alien image.
     //10. Get the image element & store it in a variable           
     var alien = document.getElementById("alien");
     //11. Get browser's current width & height to set a horizontal limit for the alien image & store in variables.
-    
-    alien.style.left = (Math.random()*width + 4) + "px";
-    alien.style.up = (Math.random()*height + 4) + "px";
-    alien.style.left = parseInt(alien.style.left) + "px";
-    alien.style.up = parseInt(alien.style.up) + "px"  
+    window.innerWidth = document.body.clientWidth ;
+     window.innerHeight = document.body.clientHeight;
+    alien.style.left = 4 + "px";
+    alien.style.up =  4 + "px";
     }
      //12. Attach an event handler to the alien image for the mouseover event
      window.addEventListener("mouseover", function(event){
