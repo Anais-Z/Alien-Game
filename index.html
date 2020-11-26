@@ -60,39 +60,29 @@
 
           //9. Concatenate the pixel unit to your calculation. Ex. + 'px';
       }
-
-      
-    //  function moveAlien(e){
+     window.innerWidth = document.body.clientWidth ;
+     window.innerHeight = document.body.clientHeight;
+    function moveAlien(e){
     //Move the alien away from the cursor when the cursor is moved close to the alien image.
-    //10. Get the image element & store it in a variable 
-    
-      var alien = document.getElementById("alien")
-
+    //10. Get the image element & store it in a variable           
+    var alien = document.getElementById("alien");
     //11. Get browser's current width & height to set a horizontal limit for the alien image & store in variables.
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-    var xCoor = e.offsetX;
-    var yCoor = e.offsetY;
-    var x1Coor = e.clientX + 100;
-    var y1Coor = e.clientY + 100;
-    alien.style.left = window.innerWidth - x1Coor + "px";
-    alien.style.up = window.innerHeight - y1Coor + "px";
-     var browserWidth =  alien.style.left + xCoor + "px";
-     var browserHeight = alien.style.up + yCoor + "px" ;
-
-     browserWidth += Math.random()*200 + "px"
-     browserHeight += Math.random()*200 + "px"
-     // }
+    
+    alien.style.left = (Math.random()*width + 4) + "px";
+    alien.style.up = (Math.random()*height + 4) + "px";
+    alien.style.left = parseInt(alien.style.left) + "px";
+    alien.style.up = parseInt(alien.style.up) + "px"  
+    }
      //12. Attach an event handler to the alien image for the mouseover event
-     alien.addEventListener("mouseover", function(event){
+     window.addEventListener("mouseover", function(event){
     
       //13. Use the target property of the event object to change the coordinates. Ex. event.target.style.left = your coordinates calculation (again refer to steps 8 & 9)
-      event.target.style.left = Math.random()*200 + "px"
-      event.target.style.up = Math.random()*200 + "px"
+    event.target.style.left = event.clientX - 50 + "px"
+    event.target.style.up = event.clientY - 50 + "px"
       //14. Your coordinates calculation requires the variables created in step 11.*/
-      event.target.style.left -= browserWidth;
-       event.target.style.up -= browserHeight;
-     moveAlien(e)
+    alien.style.left = Math.round(Math.random()*width) + "px";
+    alien.style.up = Math.round(Math.random()*height) + "px"  
+     moveAlien(event)
      });
     </script>
   </body>
