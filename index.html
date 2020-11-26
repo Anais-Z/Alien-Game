@@ -61,7 +61,7 @@
           //9. Concatenate the pixel unit to your calculation. Ex. + 'px';
       }
      
-    function moveAlien(e){
+   // function moveAlien(e){
     //Move the alien away from the cursor when the cursor is moved close to the alien image.
     //10. Get the image element & store it in a variable           
     var alien = document.getElementById("alien");
@@ -70,9 +70,14 @@
      window.innerHeight = document.body.clientHeight;
     alien.style.left = 4 + "px";
     alien.style.up =  4 + "px";
-    }
+   // }
+
+   window.addEventListener("mouseover", function(event){
+
+   });
+
      //12. Attach an event handler to the alien image for the mouseover event
-     window.addEventListener("mouseover", function(event){
+     alien.addEventListener("mouseover", function(event){
     
       //13. Use the target property of the event object to change the coordinates. Ex. event.target.style.left = your coordinates calculation (again refer to steps 8 & 9)
     event.target.style.left = event.clientX - 50 + "px"
