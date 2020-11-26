@@ -31,11 +31,11 @@
       
         //3. Inside of the callback function of this event handler, create offset distances for X and Y from the mouse
         
-        function moveFunction(e)
+        function myFunction(e)
       {
           //3. Inside of the callback function of this event handler, create offset distances for X and Y from the mouse
-          x = e.offsetX;
-          y = e.offsetY;
+          var  x = e.offsetX;
+          var  y = e.offsetY;
           var x1 = e.clientX + 100;
           var y1 = e.clientY + 100;
 
@@ -62,18 +62,25 @@
       }
 
       
-      function moveAlien(e){
+    //  function moveAlien(e){
     //Move the alien away from the cursor when the cursor is moved close to the alien image.
     //10. Get the image element & store it in a variable 
     
       var alien = document.getElementById("alien")
 
     //11. Get browser's current width & height to set a horizontal limit for the alien image & store in variables.
-     window.innerWidth = 803;
-     window.innerHeight = 603;
-     var browserWidth = window.innerWidth;
-     var browserHeight = window.innerHeight;
-      }
+    var xCoor = e.offsetX;
+    var yCoor = e.offsetY;
+    var x1Coor = e.clientX + 100;
+    var y1Coor = e.clientY + 100;
+    alien.style.left = window.innerWidth - x1Coor + "px";
+    alien.style.up = window.innerHeight - y1Coor + "px";
+     var browserWidth =  alien.style.left + xCoor + "px";
+     var browserHeight = alien.style.up + yCoor + "px" ;
+
+     browserWidth += Math.random()*200 + "px"
+     browserHeight += Math.random()*200 + "px"
+     // }
      //12. Attach an event handler to the alien image for the mouseover event
      alien.addEventListener("mouseover", function(event){
     
