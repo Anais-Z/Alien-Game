@@ -83,7 +83,8 @@
 
      //12. Attach an event handler to the alien image for the mouseover event
      alien.addEventListener("mouseover", function(event){
-    
+      var position = new AlienCoor(event.target.style.left, event.target.style.top);
+      
       //13. Use the target property of the event object to change the coordinates. Ex. event.target.style.left = your coordinates calculation (again refer to steps 8 & 9)
     event.target.style.left = event.clientX - 50 + "px"
     event.target.style.up = event.clientY - 50 + "px"
