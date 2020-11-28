@@ -20,6 +20,7 @@
       //1. Create an event handler on the window object for the load event 
       window.addEventListener("load", function(event) {
         console.log('The page is loaded');
+        
       });
 
       //2. Create an event handler on the window object for the mousemove event 
@@ -42,7 +43,7 @@
           //4. Get the image element & store it in a variable
           var image = document.getElementById("spaceship1");
 
-          //5. move the image by setting the coordinates of left & top refer to slide .  Ex. node.style.left = your coordinates calculation here.  
+          //5. move the image by setting the coordinates of left & top refer to slide .  Ex. node.style.left = your coordinates calculation here.
           image.style.left = x1 + "px" ;
           image.style.top = y1 + "px";
 
@@ -53,7 +54,7 @@
           var newCoordinates = image.style.left + x;
           var newCoors = image.style.up + y ;
           //8. Use the JS built-in function Math.random() to add a random number to increment the movement of the image following the mouse.
-          // Ex. + (Math.random()*200 + 100))
+          // Ex. + (Math.random()200 + 100))
           //Refer to https://www.w3schools.com/jsref/jsref_random.asp 
           newCoordinates += Math.random()*200 + "px";
           newCoors += Math.random()*200 + "px";
@@ -61,37 +62,28 @@
           //9. Concatenate the pixel unit to your calculation. Ex. + 'px';
       }
      
-   // function moveAlien(e){
+  
     //Move the alien away from the cursor when the cursor is moved close to the alien image.
     //10. Get the image element & store it in a variable           
     var alien = document.getElementById("alien");
     //11. Get browser's current width & height to set a horizontal limit for the alien image & store in variables.
-    window.innerWidth = document.body.clientWidth ;
-     window.innerHeight = document.body.clientHeight;
-    alien.style.left = 4 + "px";
-    alien.style.up =  4 + "px";
-   // }
-
-    class AlienCoor {
-      constructor(x,y){
-      this.x = parseInt(x);
-      this.y = parseInt(y);
-      }
-
-    };
+    windowHeight = document.documentElement.clientHeight;
+    windowWidth = document.documentElement.clientWidth;
+    alien.width = 4 + "px";
+    alien.height = 4 + "px";
+    alien.style.left = 0 + "px";
+    alien.style.up =  0 + "px";
    
-
+  
+    
      //12. Attach an event handler to the alien image for the mouseover event
-     alien.addEventListener("mouseover", function(event){
-      var position = new AlienCoor(event.target.style.left, event.target.style.top);
-      var x1, y1;
+    
+      
       //13. Use the target property of the event object to change the coordinates. Ex. event.target.style.left = your coordinates calculation (again refer to steps 8 & 9)
-    event.target.style.left = event.clientX - 50 + "px"
-    event.target.style.up = event.clientY - 50 + "px"
+    
+    
       //14. Your coordinates calculation requires the variables created in step 11.*/
-    alien.style.left = Math.round(Math.random()*width) + "px";
-    alien.style.up = Math.round(Math.random()*height) + "px"  
-     moveAlien(event)
-     });
+ 
+     
     </script>
   </body>
