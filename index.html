@@ -80,6 +80,13 @@
         this.y = parseInt(y);
       }
     }
+
+    function imageDistance(x,y){
+      var x1 = parseInt(x) - parseInt(y);
+      var y1 = parent(x) - parseInt(y);
+      return parseInt(Math.sqrt(x1*x1 + y1*y1))
+    }
+
    
   
     
