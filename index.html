@@ -101,7 +101,9 @@
         var alienY = randomDistance(windowHeight - alien.style.height , 0)
         newPosition = new theAlien(alienX,alienY);
       //14. Your coordinates calculation requires the variables created in step 11.*/
- 
+      
+      event.target.style.left = newPosition.x + "px";
+      event.target.style.up = newPosition.y + "px";
     });
     </script>
   </body>
