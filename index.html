@@ -1,4 +1,6 @@
 <!-- This file is responsible for all the html and images of catch the alien.-->
+<!--Student Name : Anais Zulfequar-->
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -65,45 +67,48 @@
   
     //Move the alien away from the cursor when the cursor is moved close to the alien image.
     //10. Get the image element & store it in a variable           
-    var alien = document.getElementById("alien");
+     alien = document.getElementById("alien");
     //11. Get browser's current width & height to set a horizontal limit for the alien image & store in variables.
-    windowHeight = document.documentElement.clientHeight;
-    windowWidth = document.documentElement.clientWidth;
-    alien.width = 4 + "px";
-    alien.height = 4 + "px";
-    alien.style.left = alien.width + "px";
-    alien.style.up =  alien.height + "px";
+        windowHeight = document.documentElement.clientHeight;
+        windowWidth = document.documentElement.clientWidth;
+        alien.width = 4 + "px"
+        alien.height = 4 + "px"
+        alien.style.left = alien.width + 'px';
+        alien.style.top = alien.height + 'px';
 
-    class theAlien{
-      constructor(x,y){
-        this.x = parseInt(x);
-        this.y = parseInt(y);
+
+        class theAlien {
+        constructor(x,y) {
+          this.x = parseInt(x);
+          this.y = parseInt(y);
+        }
+
       }
-    }
 
-    function imageDistance(x,y){
-      var x1 = parseInt(x) - parseInt(y);
-      var y1 = parent(x) - parseInt(y);
-      return parseInt(Math.sqrt(x1*x1 + y1*y1))
-    }
+      function imageDistance(x,y) {
+          var x1 = parseInt(x) - parseInt(y);
+          var y1 = parseInt(x) - parseInt(y);
+          return parseInt(Math.sqrt(x1*x1 + y1*y1));
+        };
 
-   function randomDistance(max, min){
-     return Math.random() * (max - min);
-   }
+      function randNum(max,min) {
+        return Math.random() * (max - min) + min;
+      }
   
      //12. Attach an event handler to the alien image for the mouseover event
-    alien.addEventListener("mouseover", function(event){
-      var currentPosition = new theAlien(event.target.style.left, event.target.style.top);
-      var newPosition ;
+     alien.addEventListener("mouseover", function(event) {
+          var currentPosition = new theAlien(event.target.style.left, event.target.style.top);
+          var newPosition;
       //13. Use the target property of the event object to change the coordinates. Ex. event.target.style.left = your coordinates calculation (again refer to steps 8 & 9)
-    while(imageDistance(currentPosition, newPosition) < windowHeight * windowWidth)
-        var alienX = randomDistance(windowWidth - alien.style.width , 0)
-        var alienY = randomDistance(windowHeight - alien.style.height , 0)
-        newPosition = new theAlien(alienX,alienY);
+      while(imageDistance(currentPosition, newPosition) < windowHeight * windowHeight); {
+         var alienX = randNum(windowWidth - alien.style.width, 0);
+         var alienY = randNum( windowHeight - alien.style.height, 0);
+          newPosition = new theAlien(alienX,alienY);
+        } 
       //14. Your coordinates calculation requires the variables created in step 11.*/
       
-      event.target.style.left = newPosition.x + "px";
-      event.target.style.up = newPosition.y + "px";
+      event.target.style.left = newPosition.x + 'px';
+        event.target.style.top = newPosition.y + 'px';
     });
     </script>
   </body>
